@@ -12,14 +12,10 @@ namespace Lab7CSharp
         public Point[] Draw() {
             Point[] p = new Point[5];
             return p; }
-        public void Move() { }
     }
 
     public class five : Figure
     {
-        int size;
-        string color;
-
         public Point[] Draw()
         {
             
@@ -28,16 +24,16 @@ namespace Lab7CSharp
 
             Point[] p = new Point[5];
 
-            p[0].X = rnd.Next(0, 518);
-            p[0].Y = rnd.Next(0, 353);
-            p[1].X = rnd.Next(0, 518);
-            p[1].Y = rnd.Next(0, 353);
-            p[2].X = rnd.Next(0, 518);
-            p[2].Y = rnd.Next(0, 353);
-            p[3].X = rnd.Next(0, 518);
-            p[3].Y = rnd.Next(0, 353);
-            p[4].X = rnd.Next(0, 518);
-            p[4].Y = rnd.Next(0, 353);
+            p[0].X = rnd.Next(0, 400);
+            p[0].Y = rnd.Next(0, 280);
+            p[1].X = rnd.Next(0, 400);
+            p[1].Y = rnd.Next(0, 280);
+            p[2].X = rnd.Next(0, 400);
+            p[2].Y = rnd.Next(0, 280);
+            p[3].X = rnd.Next(0, 400);
+            p[3].Y = rnd.Next(0, 280);
+            p[4].X = rnd.Next(0, 400);
+            p[4].Y = rnd.Next(0, 280);
 
             //g.DrawPolygon(pen, p);
             return p;
@@ -48,14 +44,12 @@ namespace Lab7CSharp
     public class rectangle : Figure
     {
         int size;
-        string color;
-
         public int[] Draw()
         {
             Random rnd = new Random();
-            size = rnd.Next(15,300);
-            int x = rnd.Next(0, 518);
-            int y = rnd.Next(0, 353);
+            size = rnd.Next(15,125);
+            int x = rnd.Next(0, 305);
+            int y = rnd.Next(0, 175);
             int width = size;
             int height = size;
 
@@ -72,47 +66,42 @@ namespace Lab7CSharp
 
     public class triangle : Figure
     {
-        int size;
-        string color;
-
         public Point[] Draw()
         {
             Random rnd = new Random();
 
             Point[] p = new Point[3];
 
-            p[0].X = rnd.Next(0, 518);
-            p[0].Y = rnd.Next(0, 353);
-            p[1].X = rnd.Next(0, 518);
-            p[1].Y = rnd.Next(0, 353);
-            p[2].X = rnd.Next(0, 518);
-            p[2].Y = rnd.Next(0, 353);
+            p[0].X = rnd.Next(0, 400);
+            p[0].Y = rnd.Next(0, 280);
+            p[1].X = rnd.Next(0, 400);
+            p[1].Y = rnd.Next(0, 280);
+            p[2].X = rnd.Next(0, 400);
+            p[2].Y = rnd.Next(0, 280);
 
             return p;
         }
     }
     public class diamond : Figure
     {
-        int size;
-        string color;
-
         public Point[] Draw()
         {
             Random rnd = new Random();
 
             Point[] p = new Point[4];
+ 
+            int r = rnd.Next(-25, 90);
 
-            p[0].X = rnd.Next(0, 518);
-            p[0].Y = rnd.Next(0, 353);
-            p[1].X = rnd.Next(0, 518);
-            p[1].Y = rnd.Next(0, 353);
+            p[0].X = 100+r;
+            p[0].Y = 100 + r;
+            p[1].X = 0 + r;
+            p[1].Y = 200 + r;
 
-            p[2].X = p[1].X;
-            p[2].Y = p[1].Y + (p[0].Y - p[1].Y);
+            p[2].X = 150 + r;
+            p[2].Y = 200 + r;
 
-            p[3].X = rnd.Next(0, 518);
-            p[3].Y = rnd.Next(0, 353);
-
+            p[3].X = 250 + r;
+            p[3].Y = 100 + r;
 
             return p;
 

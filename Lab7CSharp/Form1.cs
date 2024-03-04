@@ -129,6 +129,11 @@ namespace Lab7CSharp
 
                 Graphics g;
                 g = panel3.CreateGraphics();
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
                 g.DrawPolygon(pen, p);
             }
             if (radioButton2.Checked){
@@ -139,6 +144,11 @@ namespace Lab7CSharp
 
                 Graphics g;
                 g = panel3.CreateGraphics();
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
                 //g.DrawRectangle(pen, x, y, width, height);
                 g.DrawRectangle(pen, p[0], p[1], p[2], p[3]);
             }
@@ -147,6 +157,10 @@ namespace Lab7CSharp
                 Point[] p = new Point[3];
                 triangle t = new triangle();
                 p=t.Draw();
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
 
                 Graphics g;
                 g = panel3.CreateGraphics();
@@ -159,12 +173,16 @@ namespace Lab7CSharp
                 diamond d = new diamond();
                 p=d.Draw();
 
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
                 Graphics g;
                 g = panel3.CreateGraphics();
                 g.DrawPolygon(pen, p);
             }
-        }
 
+        }
     }
 
 }
