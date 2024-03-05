@@ -116,16 +116,17 @@ namespace Lab7CSharp
 
         }
 
+        
+        Point[] p = new Point[5];
+        int[] p1 = new int[4];
 
-
-
-        private void button6_Click(object sender, EventArgs e)
+        public void button6_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked){
                 Pen pen = new Pen(Color.Black);
-                Point[] p = new Point[5];
+                
                 five f = new five();
-                p= f.Draw();
+                p = f.Draw();
 
                 Graphics g;
                 g = panel3.CreateGraphics();
@@ -138,9 +139,9 @@ namespace Lab7CSharp
             }
             if (radioButton2.Checked){
                 Pen pen = new Pen(Color.Black);
-                int[] p = new int[4];
+                
                 rectangle r = new rectangle();
-                p=r.Draw();
+                p1 = r.Draw();
 
                 Graphics g;
                 g = panel3.CreateGraphics();
@@ -150,11 +151,10 @@ namespace Lab7CSharp
                 pen.Color = colorDialog.Color;
 
                 //g.DrawRectangle(pen, x, y, width, height);
-                g.DrawRectangle(pen, p[0], p[1], p[2], p[3]);
+                g.DrawRectangle(pen, p1[0], p1[1], p1[2], p1[3]);
             }
             if (radioButton3.Checked){
                 Pen pen = new Pen(Color.Black);
-                Point[] p = new Point[3];
                 triangle t = new triangle();
                 p=t.Draw();
 
@@ -169,7 +169,7 @@ namespace Lab7CSharp
             }
             if (radioButton4.Checked){
                 Pen pen = new Pen(Color.Black);
-                Point[] p = new Point[4];
+                //Point[] p = new Point[4];
                 diamond d = new diamond();
                 p=d.Draw();
 
@@ -181,7 +181,300 @@ namespace Lab7CSharp
                 g = panel3.CreateGraphics();
                 g.DrawPolygon(pen, p);
             }
+        }
 
+        public void button8_Click(object sender, EventArgs e){
+            if (radioButton1.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                five f = new five();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = f.trans(u,0,p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                g.DrawPolygon(pen, p);
+            }
+            if (radioButton2.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                rectangle r = new rectangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p1 = r.trans(u, 0,p1);
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                //g.DrawRectangle(pen, x, y, width, height);
+                g.DrawRectangle(pen, p1[0], p1[1], p1[2], p1[3]);
+            }
+            if (radioButton3.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                triangle t = new triangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = t.trans(u, 0,p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+
+            }
+            if (radioButton4.Checked){
+                Pen pen = new Pen(Color.Black);
+                diamond d = new diamond();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = d.trans(u, 0,p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                five f = new five();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = f.trans(-u, 0,p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                g.DrawPolygon(pen, p);
+            }
+            if (radioButton2.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                int[] p = new int[4];
+                rectangle r = new rectangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p1 = r.trans(-u, 0, p1);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                //g.DrawRectangle(pen, x, y, width, height);
+                g.DrawRectangle(pen, p1[0], p1[1], p1[2], p1[3]);
+            }
+            if (radioButton3.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                triangle t = new triangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = t.trans(-u, 0, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+
+            }
+            if (radioButton4.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                diamond d = new diamond();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = d.trans(-u, 0, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //Point[] p = new Point[5];
+                five f = new five();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = f.trans(0,-u, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                g.DrawPolygon(pen, p);
+            }
+            if (radioButton2.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //int[] p = new int[4];
+                rectangle r = new rectangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p1 = r.trans(0, -u, p1);
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                //g.DrawRectangle(pen, x, y, width, height);
+                g.DrawRectangle(pen, p1[0], p1[1], p1[2], p1[3]);
+            }
+            if (radioButton3.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //Point[] p = new Point[3];
+                triangle t = new triangle();
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = t.trans(0,-u, p);
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+
+            }
+            if (radioButton4.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                diamond d = new diamond();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = d.trans(0, -u, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //Point[] p = new Point[5];
+                five f = new five();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = f.trans(0, u, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                g.DrawPolygon(pen, p);
+            }
+            if (radioButton2.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //int[] p = new int[4];
+                rectangle r = new rectangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p1 = r.trans(0, u, p1);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+
+                //g.DrawRectangle(pen, x, y, width, height);
+                g.DrawRectangle(pen, p1[0], p1[1], p1[2], p1[3]);
+            }
+            if (radioButton3.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //Point[] p = new Point[3];
+                triangle t = new triangle();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = t.trans(0, u, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+
+            }
+            if (radioButton4.Checked)
+            {
+                Pen pen = new Pen(Color.Black);
+                //Point[] p = new Point[4];
+                diamond d = new diamond();
+
+                int u = Convert.ToInt32(textBox1.Text);
+                p = d.trans(0, u, p);
+
+                ColorDialog colorDialog = new ColorDialog();
+                colorDialog.ShowDialog();
+                pen.Color = colorDialog.Color;
+
+                Graphics g;
+                g = panel3.CreateGraphics();
+                g.DrawPolygon(pen, p);
+            }
         }
     }
 
